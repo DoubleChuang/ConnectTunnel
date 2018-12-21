@@ -1,0 +1,10 @@
+{
+  "exe_path":"/path/to/your/dtunnel.exe",
+  "server_ip":"0.0.0.0", 
+  "server_port":8000,
+  "ssl": false,
+  "member_list":[
+    {"user_name": "user1",  "user_password":"pswd1", "port":10000},
+    {"user_name": "user2",  "user_password":"pswd2", "port":10001},    
+  ]
+}
