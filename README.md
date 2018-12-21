@@ -9,5 +9,4 @@ ConnectTunnel is a program that easily connects to the [dtunnel](https://github.
 - json file : config json file, default is config.json
 
 ## To-Do
-- cross os
 - check json arg
