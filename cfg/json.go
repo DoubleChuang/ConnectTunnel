@@ -6,18 +6,16 @@ import (
 	"os"
 )
 
-type Member struct {
-	UserName string `json:"user_name"`
-	UserPswd string `json:"user_password"`
-	Port     int    `json:"port"`
-}
-
 type JsonConfig struct {
-	ExePath    string   `json:"exe_path"`
-	ServerIp   string   `json:"server_ip"`
-	ServerPort int      `json:"server_port"`
-	EnableSSL  bool     `json:"ssl"`
-	MemberList []Member `json:"member_list"`
+	ExePath    string `json:"exe_path"`
+	ServerIp   string `json:"server_ip"`
+	ServerPort int    `json:"server_port"`
+	EnableSSL        bool   `json:"ssl"`
+	MemberList []struct {
+		UserName string `json:"user_name"`
+		UserPswd string `json:"user_password"`
+		Port     int    `json:"port"`
+	} `json:"member_list"`
 }
 
 func ReadFile2Buf(filePath string) []byte {
