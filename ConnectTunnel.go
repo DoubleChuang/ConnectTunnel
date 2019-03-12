@@ -1,13 +1,14 @@
 package main
 
 import (
-	"./cfg"
 	"fmt"
 	"log"
 	"os"
 	"os/exec"
 	"runtime"
 	"strconv"
+
+	"./cfg"
 )
 
 type tunnel struct {
@@ -45,7 +46,8 @@ func getCmd(c cfg.JsonConfig, num int) []string {
 			" -clientkey " + c.MemberList[num].UserPswd +
 			" -local :" + strconv.Itoa(c.MemberList[num].Port) +
 			" -remote=" + c.ServerIp + ":" + strconv.Itoa(c.ServerPort) +
-			" -ssl=" + If(c.EnableSSL, "true", "false").(string) + cmdTail}
+			" -ssl=" + If(c.EnableSSL, "true", "false").(string) + cmdTail +
+			" -buster " + c.ServerIp + ":" + strconv.Itoa(c.BusterPort)}
 
 	return arg
 }
