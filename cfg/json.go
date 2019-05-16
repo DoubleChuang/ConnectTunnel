@@ -10,11 +10,12 @@ type JsonConfig struct {
 	ExePath    string `json:"exe_path"`
 	ServerIp   string `json:"server_ip"`
 	ServerPort int    `json:"server_port"`
-	EnableSSL        bool   `json:"ssl"`
+	BusterPort int    `json:"buster_port"`
+	EnableSSL  bool   `json:"ssl"`
 	MemberList []struct {
-		UserName string `json:"user_name"`
-		UserPswd string `json:"user_password"`
-		Port     int    `json:"port"`
+		UserName   string `json:"user_name"`
+		UserPswd   string `json:"user_password"`
+		Port       int    `json:"port"`
 	} `json:"member_list"`
 }
 
